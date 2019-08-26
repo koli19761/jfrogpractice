@@ -20,7 +20,7 @@ public class JFrogUtil {
 
 		try {
 			String response = hc.callPOSTRequest(url, body, requestHeaders);
-			System.out.println(response);
+			//System.out.println(response);
 			JSONObject obj = new JSONObject(response);
 			JSONArray arr = obj.getJSONArray("results");
 
@@ -31,7 +31,7 @@ public class JFrogUtil {
 
 				if (name.endsWith("jar")) {
 					String fqn = repo + "/" + path + "/" + name;
-					System.out.println(fqn);
+					//System.out.println(fqn);
 					listOfFQN.add(fqn);
 				}
 			}
@@ -48,7 +48,7 @@ public class JFrogUtil {
 		HttpClient hc = new HttpClient();
 		int downLoadCount = 0;
 		String getresponse = hc.callGetRequest(url, requestHeaders);
-		System.out.println(getresponse);
+		//System.out.println(getresponse);
 		
 		JSONObject getobj = new JSONObject(getresponse);
 		downLoadCount = (int) getobj.get("downloadCount");
